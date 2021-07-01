@@ -1,0 +1,67 @@
+body{
+    margin-top:20px;
+color: #6c7293;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e7eaed;
+    border-radius: 0;
+}
+
+.accordion .card {
+    margin-bottom: .75rem;
+    box-shadow: 0px 1px 15px 1px rgba(230, 234, 236, 0.35);
+    border-radius: .25rem;
+}
+.income-header {
+    position: fixed;
+    top: 50;
+    left: 0;
+    width: 200px;
+    background: #bbb;
+    z-index: 2;
+    height: 20px;
+  }
+
+  .expensive-header {
+    position: fixed;
+    top: 50;
+    right: 0;
+    width: 200px;
+    background: #bbb;
+    z-index: 2;
+    height: 20px;
+  }
+
+  .mb-0 { 
+    text-align: center; 
+}
+  
+.accordion .card .card-header {
+    background-color: transparent;
+    border: none;
+    padding: 2rem;
+}
+.grid-margin {
+    margin-bottom: 0.625rem;
+}
+.accordion .card .card-header {
+    content: "\F374";
+}
+.accordion .card .card-header a:before {
+    font-family: "Material Design Icons";
+    position: absolute;
+    right: 7px;
+    top: 0;
+    font-size: 18px;
+    display: block;
+}
+.accordion .card .card-header a[aria-expanded="false"]:before {
+    content: "\F415";
+}
