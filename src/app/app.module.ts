@@ -44,7 +44,7 @@ import { BasicInterceptorService } from './service/basic-interceptor-service';
    // UserService,
     {provide: HTTP_INTERCEPTORS, useClass: BasicInterceptorService, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
-    //  IncomeService, 
+    //  IncomeService,
     //  AuthenticationService
     // ToastrService
   ],

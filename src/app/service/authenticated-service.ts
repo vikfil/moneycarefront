@@ -39,12 +39,12 @@ export class AuthenticationService {
   }
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME);
+    const user = sessionStorage.getItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME);
     return user !== null;
   }
 
   isManager() {
-    let user = sessionStorage.getItem(this.USER_ROLE);
+    const user = sessionStorage.getItem(this.USER_ROLE);
     return user === 'MANAGER';
   }
 }

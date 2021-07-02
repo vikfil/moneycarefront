@@ -3,8 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../../service/authenticated-service';
-//import {ToastrService} from 'ngx-toastr';
-import {Path} from '../../paths'
+// import {ToastrService} from 'ngx-toastr';
+import {Path} from '../../paths';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
-  returnUrl: 'home';
+  returnUrl = 'home';
   error = '';
 
   constructor(
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required,Validators.minLength(4) ]]
+      password: ['', [Validators.required, Validators.minLength(4) ]]
     });
 
     // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -49,12 +49,12 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          //this.toast.success("You successful Log in.");
+          // this.toast.success("You successful Log in.");
           this.router.navigateByUrl(this.returnUrl);
         },
         error => {
           this.loading = false;
-          //this.toast.error("Email or password wrong.")
+          // this.toast.error("Email or password wrong.")
           this.router.navigate(['login']);
         });
   }

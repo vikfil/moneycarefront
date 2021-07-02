@@ -20,10 +20,7 @@ export class HomeComponent  implements OnInit {
   expensives: Expensive[];
   editExpensive: Expensive;
   deleteExpensive: Expensive;
-  
-
   constructor(private expensiveService: ExpensiveService, private incomeService: IncomeService) {
-    
   }
 
 ngOnInit() {
@@ -31,7 +28,7 @@ ngOnInit() {
     this.getExpensives();
 }
 
-public getIncomes():void {
+public getIncomes(): void {
     this.incomeService.getIncomes().subscribe(
         (response: Income[]) => {
            this.incomes = response;
@@ -48,19 +45,19 @@ public openIncomeModal(income: Income, mode: string): void {
   button.type = 'button';
   button.style.display = 'none';
   button.setAttribute('data-toggle', 'modal');
-  if(mode === 'add') {
+  if (mode === 'add') {
     button.setAttribute('data-target', '#addIncome');
   }
-  if(mode === 'edit') {
+  if (mode === 'edit') {
     this.editIncome = income;
     button.setAttribute('data-target', '#editIncome');
   }
-  if(mode === 'remove') {
+  if (mode === 'remove') {
     this.deleteIncome = income;
     button.setAttribute('data-target', '#deleteIncome');
   }
   container.appendChild(button);
-  button.click()
+  button.click();
 }
 
 public onAddIncome(addForm: NgForm): void {
@@ -102,7 +99,7 @@ public onDeleteIncome(incomeId: number): void {
   );
 }
 
-public getExpensives():void {
+public getExpensives(): void {
   this.expensiveService.getExpensives().subscribe(
       (response: Expensive[]) => {
          this.expensives = response;
@@ -119,19 +116,19 @@ const button = document.createElement('button');
 button.type = 'button';
 button.style.display = 'none';
 button.setAttribute('data-toggle', 'modal');
-if(mode === 'add') {
+if (mode === 'add') {
   button.setAttribute('data-target', '#addExpensive');
 }
-if(mode === 'edit') {
+if (mode === 'edit') {
   this.editExpensive = expensive;
   button.setAttribute('data-target', '#editExpensive');
 }
-if(mode === 'remove') {
+if (mode === 'remove') {
   this.deleteExpensive = expensive;
   button.setAttribute('data-target', '#deleteExpensive');
 }
 container.appendChild(button);
-button.click()
+button.click();
 }
 
 public onAddExpensive(addForm: NgForm): void {

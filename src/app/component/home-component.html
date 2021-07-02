@@ -16,48 +16,48 @@
                       <!-- <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> -->
                       <p>Add new record to your income </p>
                       <a (click)="openIncomeModal(null, 'add')"
-                        class="btn btn-outline-info btn-circle btn-lg btn-circle" data-toggle="modal"
-                        data-target="addIncome"><i class="fa fa-plus-square" aria-hidden="true"></i> </a>
+                         class="btn btn-outline-info btn-circle btn-lg btn-circle" data-toggle="modal"
+                         data-target="addIncome"><i class="fa fa-plus-square" aria-hidden="true"></i> </a>
                       <!-- </a> -->
                     </h5>
                   </div>
                   <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-1">
                     <div class="card-body">
                       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-                        rel="stylesheet" />
+                            rel="stylesheet" />
                       <div class="table-responsive">
                         <table class="table no-wrap user-table mb-0">
                           <thead>
-                            <tr>
-                              <th  hidden scope="col" class="border-0 text-uppercase font-medium pl-4">Id</th>
-                              <th scope="col" class="border-0 text-uppercase font-medium">Category</th>
-                              <th scope="col" class="border-0 text-uppercase font-medium">Amount</th>
-                              <th scope="col" class="border-0 text-uppercase font-medium">Manage</th>
-                            </tr>
+                          <tr>
+                            <th  hidden scope="col" class="border-0 text-uppercase font-medium pl-4">Id</th>
+                            <th scope="col" class="border-0 text-uppercase font-medium">Category</th>
+                            <th scope="col" class="border-0 text-uppercase font-medium">Amount</th>
+                            <th scope="col" class="border-0 text-uppercase font-medium">Manage</th>
+                          </tr>
                           </thead>
                           <tbody>
-                            <tr *ngFor="let income of incomes">
-                              <td hidden class="pl-4">{{income.id}}</td>
-                              <td>
-                                <h5 class="font-medium mb-0">{{income.category}}</h5>
-                              </td>
-                              <td>
-                                <span class="text-muted">{{income.amount}}</span><br>
+                          <tr *ngFor="let income of incomes">
+                            <td hidden class="pl-4">{{income.id}}</td>
+                            <td>
+                              <h5 class="font-medium mb-0">{{income.category}}</h5>
+                            </td>
+                            <td>
+                              <span class="text-muted">{{income.amount}}</span><br>
 
-                              </td>
-                              <td>
-                                <a (click)="openIncomeModal(income, 'remove')" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-placement="top" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                                <!-- <button (click) = "openModal(income, 'remove')" type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-toggle="modal" data-target="deleteIncome"><i class="fa fa-trash"></i> </button> -->
-                                <!-- <button (click) = "openModal(income, 'edit')" type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-toggle="modal" data-target="editIncome"><i class="fa fa-edit"></i> </button> -->
-                                <a (click)="openIncomeModal(income, 'edit')" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i> </a>
-                              </td>
-                            </tr>
+                            </td>
+                            <td>
+                              <a (click)="openIncomeModal(income, 'remove')" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-placement="top" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                              <!-- <button (click) = "openModal(income, 'remove')" type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-toggle="modal" data-target="deleteIncome"><i class="fa fa-trash"></i> </button> -->
+                              <!-- <button (click) = "openModal(income, 'edit')" type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-toggle="modal" data-target="editIncome"><i class="fa fa-edit"></i> </button> -->
+                              <a (click)="openIncomeModal(income, 'edit')" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i> </a>
+                            </td>
+                          </tr>
                           </tbody>
                         </table>
                       </div>
                       <!-- Add income -->
                       <div class="modal fade" id="addIncome" tabindex="-1" role="dialog" aria-labelledby="addIncome"
-                        aria-hidden="true">
+                           aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -69,18 +69,18 @@
                             <div class="modal-body">
                               <form #addForm="ngForm" (ngSubmit)="onAddIncome(addForm)">
                                 <div class="form-group">
-                                  <label for="name">Category</label>
+                                  <label for="category">Category</label>
                                   <input type="text" ngModel name="category" class="form-control" id="category"
-                                    placeholder="category" required>
+                                         placeholder="category" required>
                                 </div>
                                 <div class="form-group">
-                                  <label for="amoun">Amount</label>
+                                  <label for="amount">Amount</label>
                                   <input type="number" ngModel name="amount" class="form-control" id="amount"
-                                    placeholder="amount" required>
+                                         placeholder="amount" required>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" id="add-income-form" class="btn btn-secondary"
-                                    data-dismiss="modal">Close</button>
+                                          data-dismiss="modal">Close</button>
                                   <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Save
                                     changes</button>
                                 </div>
@@ -94,7 +94,7 @@
                 </div>
                 <!-- Edit Modal -->
                 <div class="modal fade" id="editIncome" tabindex="-1" role="dialog" aria-labelledby="editIncome"
-                  aria-hidden="true">
+                     aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -108,18 +108,18 @@
                           <div class="form-group">
                             <label for="category">Category</label>
                             <input type="text" ngModel="{{editIncome?.category}}" name="category" class="form-control"
-                              id="category" aria-describedby="emailHelp">
+                                   id="category" aria-describedby="emailHelp">
                           </div>
                           <input type="hidden" ngModel="{{editIncome?.id}}" name="id" class="form-control" id="id">
                           <div class="form-group">
                             <label for="amount">Amount</label>
                             <input type="number" ngModel="{{editIncome?.amount}}" name="amount" class="form-control"
-                              id="amount">
+                                   id="amount">
                           </div>
                           <div class="modal-footer">
                             <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
                             <button (click)="onUpdateIncome(editForm.value)" data-dismiss="modal"
-                              class="btn btn-primary">Save changes</button>
+                                    class="btn btn-primary">Save changes</button>
                           </div>
                         </form>
                       </div>
@@ -128,7 +128,7 @@
                 </div>
                 <!-- Delete Modal -->
                 <div class="modal fade" id="deleteIncome" tabindex="-1" role="dialog" aria-labelledby="deleteLabel"
-                  aria-hidden="true">
+                     aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -142,7 +142,7 @@
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                           <button (click)="onDeleteIncome(deleteIncome?.id)" class="btn btn-danger"
-                            data-dismiss="modal">Yes</button>
+                                  data-dismiss="modal">Yes</button>
                         </div>
                       </div>
                     </div>
@@ -170,48 +170,48 @@
                       <!-- <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> -->
                       <p>Add new record to your expensive </p>
                       <a (click)="openExpensiveModal(null, 'add')"
-                        class="btn btn-outline-info btn-circle btn-lg btn-circle" data-toggle="modal"
-                        data-target="addIncome"><i class="fa fa-plus-square" aria-hidden="true"></i> </a>
+                         class="btn btn-outline-info btn-circle btn-lg btn-circle" data-toggle="modal"
+                         data-target="addIncome"><i class="fa fa-plus-square" aria-hidden="true"></i> </a>
                       <!-- </a> -->
                     </h5>
                   </div>
                   <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-1">
                     <div class="card-body">
                       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-                        rel="stylesheet" />
+                            rel="stylesheet" />
                       <div class="table-responsive">
                         <table class="table no-wrap user-table mb-0">
                           <thead>
-                            <tr>
-                              <th  hidden scope="col" class="border-0 text-uppercase font-medium pl-4">Id</th>
-                              <th scope="col" class="border-0 text-uppercase font-medium">Category</th>
-                              <th scope="col" class="border-0 text-uppercase font-medium">Amount</th>
-                              <th scope="col" class="border-0 text-uppercase font-medium">Manage</th>
-                            </tr>
+                          <tr>
+                            <th  hidden scope="col" class="border-0 text-uppercase font-medium pl-4">Id</th>
+                            <th scope="col" class="border-0 text-uppercase font-medium">Category</th>
+                            <th scope="col" class="border-0 text-uppercase font-medium">Amount</th>
+                            <th scope="col" class="border-0 text-uppercase font-medium">Manage</th>
+                          </tr>
                           </thead>
                           <tbody>
-                            <tr *ngFor="let expensive of expensives">
-                              <td hidden class="pl-4">{{expensive.id}}</td>
-                              <td>
-                                <h5 class="font-medium mb-0">{{expensive.category}}</h5>
-                              </td>
-                              <td>
-                                <span class="text-muted">{{expensive.amount}}</span><br>
+                          <tr *ngFor="let expensive of expensives">
+                            <td hidden class="pl-4">{{expensive.id}}</td>
+                            <td>
+                              <h5 class="font-medium mb-0">{{expensive.category}}</h5>
+                            </td>
+                            <td>
+                              <span class="text-muted">{{expensive.amount}}</span><br>
 
-                              </td>
-                              <td>
-                                <a (click)="openExpensiveModal(expensive, 'remove')" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-placement="top" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                                <!-- <button (click) = "openModal(income, 'remove')" type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-toggle="modal" data-target="deleteIncome"><i class="fa fa-trash"></i> </button> -->
-                                <!-- <button (click) = "openModal(income, 'edit')" type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-toggle="modal" data-target="editIncome"><i class="fa fa-edit"></i> </button> -->
-                                <a (click)="openExpensiveModal(expensive, 'edit')" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i> </a>
-                              </td>
-                            </tr>
+                            </td>
+                            <td>
+                              <a (click)="openExpensiveModal(expensive, 'remove')" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-placement="top" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                              <!-- <button (click) = "openModal(income, 'remove')" type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-toggle="modal" data-target="deleteIncome"><i class="fa fa-trash"></i> </button> -->
+                              <!-- <button (click) = "openModal(income, 'edit')" type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-toggle="modal" data-target="editIncome"><i class="fa fa-edit"></i> </button> -->
+                              <a (click)="openExpensiveModal(expensive, 'edit')" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i> </a>
+                            </td>
+                          </tr>
                           </tbody>
                         </table>
                       </div>
                       <!-- Add expensive -->
                       <div class="modal fade" id="addExpensive" tabindex="-1" role="dialog" aria-labelledby="addExpensive"
-                        aria-hidden="true">
+                           aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -223,18 +223,18 @@
                             <div class="modal-body">
                               <form #addForm="ngForm" (ngSubmit)="onAddExpensive(addForm)">
                                 <div class="form-group">
-                                  <label for="name">Category</label>
+                                  <label for="category">Category</label>
                                   <input type="text" ngModel name="category" class="form-control" id="category"
-                                    placeholder="category" required>
+                                         placeholder="category" required>
                                 </div>
                                 <div class="form-group">
-                                  <label for="amoun">Amount</label>
+                                  <label for="amount">Amount</label>
                                   <input type="number" ngModel name="amount" class="form-control" id="amount"
-                                    placeholder="amount" required>
+                                         placeholder="amount" required>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" id="add-expensive-form" class="btn btn-secondary"
-                                    data-dismiss="modal">Close</button>
+                                          data-dismiss="modal">Close</button>
                                   <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Save
                                     changes</button>
                                 </div>
@@ -248,7 +248,7 @@
                 </div>
                 <!-- Edit Modal -->
                 <div class="modal fade" id="editExpensive" tabindex="-1" role="dialog" aria-labelledby="editExpensive"
-                  aria-hidden="true">
+                     aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -262,18 +262,18 @@
                           <div class="form-group">
                             <label for="category">Category</label>
                             <input type="text" ngModel="{{editExpensive?.category}}" name="category" class="form-control"
-                              id="category" aria-describedby="emailHelp">
+                                   id="category" aria-describedby="emailHelp">
                           </div>
                           <input type="hidden" ngModel="{{editExpensive?.id}}" name="id" class="form-control" id="id">
                           <div class="form-group">
                             <label for="amount">Amount</label>
                             <input type="number" ngModel="{{editExpensive?.amount}}" name="amount" class="form-control"
-                              id="amount">
+                                   id="amount">
                           </div>
                           <div class="modal-footer">
                             <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
                             <button (click)="onUpdateExpensive(editForm.value)" data-dismiss="modal"
-                              class="btn btn-primary">Save changes</button>
+                                    class="btn btn-primary">Save changes</button>
                           </div>
                         </form>
                       </div>
@@ -282,7 +282,7 @@
                 </div>
                 <!-- Delete Modal -->
                 <div class="modal fade" id="deleteExpensive" tabindex="-1" role="dialog" aria-labelledby="deleteLabel"
-                  aria-hidden="true">
+                     aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -296,7 +296,7 @@
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                           <button (click)="onDeleteExpensive(deleteExpensive?.id)" class="btn btn-danger"
-                            data-dismiss="modal">Yes</button>
+                                  data-dismiss="modal">Yes</button>
                         </div>
                       </div>
                     </div>

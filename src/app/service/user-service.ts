@@ -14,7 +14,7 @@ export class UserService {
 
   // public getFirst(): Observable<User> {
   //   return this.http.get<User>(`${Path.backEndUrl}/user`);
-  //}
+  // }
 
 //   public postUser(user: User): Observable<User> {
 //     return this.http.post<User>(this.config.backBaseUrl + '/user', user);
